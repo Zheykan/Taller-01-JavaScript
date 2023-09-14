@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicios JavaScript #8</title>
+</head>
+
+<body>
+    <h1 class="py-2 px-5">Operadores</h1>
+
+    <!-- Maximo de tres numeros-->
+
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Maximo de 3 numeros.</h3>
+        <p>Ingresa 3 numeros a continuación, nosotros calcuraremos el numero maximo:</p>
+        <div class="col-5">
+            <form action="" method="get" id="n_maximo">
+                <label for="Input_max_1" class="form-label">
+                    <h5 class="py-2">Numero 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_max_1" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+                <label for="Input_max_2" class="form-label">
+                    <h5 class="py-2">Numero 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_max_2" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+                <label for="Input_max_3" class="form-label">
+                    <h5 class="py-2">Numero 3:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_max_3" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="calcular" onclick="calcular_maximo()">
+        </div>
+        <div class="row px-4 mb-3">
+            <div class="col-5" id="maximo">
+                <br>
+                <p>El Maximo es: </p>
+                <span>0.0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Minimo de tres numeros-->
+
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Minimo de 3 numeros.</h3>
+        <p>Ingresa 3 numeros a continuación, nosotros calcuraremos el numero mimino:</p>
+        <div class="col-5">
+            <form action="" method="get" id="n_minimo">
+                <label for="Input_min_1" class="form-label">
+                    <h5 class="py-2">Numero 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_min_1" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+                <label for="Input_min_2" class="form-label">
+                    <h5 class="py-2">Numero 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_min_2" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+                <label for="Input_min_3" class="form-label">
+                    <h5 class="py-2">Numero 3:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_min_3" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="calcular" onclick="calcular_minimo()">
+        </div>
+        <div class="row px-5 mb-3">
+            <div class="col-5" id="minimo">
+                <br>
+                <p>El minimo es: </p>
+                <span>0.0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- promedio de tres numeros-->
+
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Promedio de 3 numeros.</h3>
+        <p>Ingresa 3 numeros a continuación, nosotros calcuraremos el promedio:</p>
+        <div class="col-5">
+            <form action="" method="get" id="n_promedio">
+                <label for="Input_pm_1" class="form-label">
+                    <h5 class="py-2">Numero 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_pm_1" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+                <label for="Input_pm_2" class="form-label">
+                    <h5 class="py-2">Numero 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_pm_2" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+                <label for="Input_pm_3" class="form-label">
+                    <h5 class="py-2">Numero 3:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_pm_3" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero sin puntos o comas.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="calcular" onclick="calcular_promedio()">
+        </div>
+        <div class="row px-5 mb-3">
+            <div class="col-5" id="promedio">
+                <br>
+                <p>El promedio de los 3 numeros es: </p>
+                <span>0.0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- La letra es -->
+
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">¿La letra es MAYUSCULA o minuscula?</h3>
+        <p>Por favor ingresa una letra, te diremos si la letra que ingresaste es MAYUSCULA o minuscula:</p>
+        <div class="col-5">
+            <form action="" method="get" id="letra_cons">
+                <label for="Input_letra" class="form-label">
+                    <h5 class="py-2">Letra a consultar:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-opacity-75" id="Input_letra" required maxlength="1"
+                        placeholder="letra" aria-describedby="textHelp">
+                    <div id="textHelp" class="form-text px-2">Ingrese una letra ya sea mayuscula o minuscula.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="consultar" onclick="consultar_letra()">
+        </div>
+        <div class="row px-5 mb-3">
+            <div class="col-5" id="letra">
+                <br>
+                <p>La letra ingresada es: </p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- es numero o letra -->
+
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">¿El caracter es letra o numero?</h3>
+        <p>Por favor ingresa un caracter, te diremos si el caracter ingresado es num3r0 o letra:</p>
+        <div class="col-5">
+            <form action="" method="get" id="caracter_cons">
+                <label for="Input_caracter" class="form-label">
+                    <h5 class="py-2">Letra a consultar:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control bg-opacity-75" id="Input_caracter" required maxlength="1"
+                        placeholder="letra / numero" aria-describedby="textHelp">
+                    <div id="textHelp" class="form-text px-2">Ingrese un caracter alfanumerico cualquiera.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="consultar" onclick="consultar_caracter()">
+        </div>
+        <div class="row px-5 mb-3">
+            <div class="col-5" id="caracter">
+                <br>
+                <p>El caracter ingresado es: </p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Js/ej8.js"></script>
+    <!-- Desactivar submit de formulario con enter, solo permite usar el boton de "calcular" -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type=number]').forEach(node => node.addEventListener('keypress', e => {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                }
+            }))
+        });</script>
+</body>
+
+</html>

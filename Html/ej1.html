@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicios JavaScript #1</title>
+</head>
+
+<body>
+    <h1 class="py-2 px-5">Calculador de Pasajes de Megabus</h1>
+
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Bienvenido al calculador de pasajes.</h3>
+        <p>Por favor ingresa el saldo de tu tarjeta en el siguente campo para saber cuantos cupos de pasaje puedes
+            adquirir:</p>
+        <div class="col-5">
+            <form action="" method="get" id="calculador">
+                <label for="Input_saldo" class="form-label">
+                    <h5>Ingresa tu Saldo:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_saldo" placeholder="$ 1700 minimo"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa tu saldo sin puntos o comas, recuerda que el
+                        precio de un
+                        pasaje es de $1.700
+                    </div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="calcular" onclick="calcular_saldo()">
+        </div>
+    </div>
+    <script src="../Js/ej1.js"></script>
+    <!-- Desactivar submit de formulario con enter, solo permite usar el boton de "calcular" -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('input[type=number]').forEach(node => node.addEventListener('keypress', e => {
+                if (e.keyCode == 13) {
+                    e.preventDefault();
+                }
+            }))
+        });</script>
+</body>
+
+</html>

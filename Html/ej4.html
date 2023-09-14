@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicios JavaScript #4</title>
+</head>
+
+<body>
+    <h1 class="py-2 px-5">Consulta tu categoría</h1>
+    
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Bienvenido al consultor de categorias.</h3>
+        <p>Por favor ingresa tu puntaje de viajero frecuente en el siguente campo para determinar la categoria 
+        del tiquete (Ejecutiva, Normal o Económica):</p>
+        <div class="col-5">
+            <form action="" method="get" id="categorizador">
+                <label for="Input_puntos" class="form-label">
+                    <h5>Ingresa el puntaje:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_puntos" placeholder="Ingresa Puntos"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa el puntaje sin puntos o comas.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="consultar" onclick="calcular_puntos()">
+        </div>
+    </div>
+    <script src="../Js/ej4.js"></script>
+    <!-- Desactivar submit de formulario con enter, solo permite usar el boton de "calcular" -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('input[type=number]').forEach( node => node.addEventListener('keypress', e => {
+          if(e.keyCode == 13) {
+            e.preventDefault();
+          }
+        }))
+      });</script>
+</body>
+
+</html>

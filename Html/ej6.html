@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Ejercicios JavaScript #6</title>
+</head>
+
+<body>
+    <h1 class="py-2 px-5">Calculador Notas</h1>
+    
+    <div class="row px-4 mx-0">
+        <h3 class="py-2">Bienvenido al calculador de notas.</h3>
+        <p>Por favor ingresa las notas de las evaluaciones de cada estudiante para 
+        calcular su nota final a continuación:</p>
+        <div class="col-5">
+            <form action="" method="get" id="calculador_n">
+                <label for="Input_parcial_1" class="form-label">
+                    <h5 class="py-2">Parcial 1:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_parcial_1" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero decimal con un punto.</div>
+                </div>
+                <label for="Input_parcial_2" class="form-label">
+                    <h5 class="py-2">Parcial 2:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_parcial_2" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero decimal con un punto.</div>
+                </div>
+                <label for="Input_final" class="form-label">
+                    <h5 class="py-2">Final:</h5>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control bg-opacity-75" id="Input_final" placeholder="numero"
+                        aria-describedby="numberHelp">
+                    <div id="numberHelp" class="form-text px-2">Ingresa un numero decimal con un punto.</div>
+                </div>
+            </form>
+            <input type="submit" class="btn btn-primary" value="calcular" onclick="calcular_notas()">
+        </div>
+        <div class="row px-4 mb-3">
+            <div class="col-5">
+                <br>
+                <p>La nota final es: </p>
+                <span>0.0</span>
+            </div>
+        </div>
+    </div>
+    <script src="../Js/ej6.js"></script>
+    <!-- Desactivar submit de formulario con enter, solo permite usar el boton de "calcular" -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('input[type=number]').forEach( node => node.addEventListener('keypress', e => {
+          if(e.keyCode == 13) {
+            e.preventDefault();
+          }
+        }))
+      });</script>
+</body>
+
+</html>
